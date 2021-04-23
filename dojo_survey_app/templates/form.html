@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Take Dojo Survey</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <Form action="/results" method="post" class="form-horizontal">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" class="form-control col-md-6" id="yourName" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="location">Dojo Location:</label>
+                    <select name="location" class="form-control col-md-6" id="dojoLocation">
+                        <option value="San Jose">San Jose</option>
+                        <option value="Kent">Kent</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Dallas">Dallas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="language">Favorite Language:</label>
+                    <select name="language" class="form-control col-md-6" id="favoriteLanguage">
+                        <option value="python">Python</option>
+                        <option value="Kent">Ruby</option>
+                        <option value="Seattle">Java</option>
+                        <option value="Dallas">PHP</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment(optional):</label>
+                    <textarea class="form-control col-md-6" id="userResponnse" name="comment"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default" value="submit">Submit</button>
+            </Form>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+    </body>
+</html>
