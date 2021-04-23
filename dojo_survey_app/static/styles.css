@@ -1,9 +1,11 @@
-.container{
-    margin-top: 100px;
-    display:block;
-    align-items: center;
-    justify-content: center;  
+*{
+    margin:0;
+    padding:0;
 }
-.form-group{
-    margin-top:50px;
+.container{
+    display:block;
+    margin-top: 100px; 
+}
+.col-md-2{
+    text-align: left;
 }
