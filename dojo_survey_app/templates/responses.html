@@ -14,13 +14,15 @@
         <div class="card">
             <div class="card-body">
                 <h2 class="card-title"><u>Submitted Info:</u></h2>
-                <p> Name: {{name}}</p>
-                <p>Location: {{location}}</p>
-                <p>Favorite Language: {{language}}</p>
-                <p>Response: {{comment}}</p>
-                <button type="submit" class="btn btn-primary" style="float: right;">Go Back</button></p>
+                <p> Name: {{request.session.name}}</p>
+                <p>Location: {{request.session.location}}</p>
+                <p>Favorite Language: {{request.session.language}}</p>
+                <p>Response: {{request.session.comment}}</p>
+                <button type="submit" class="btn" style="float: right;"><a href="/go_back">Go Back</a></button>
+                <h5>Counter: {{request.session.counter}}</h5>
             </div>
         </div>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
