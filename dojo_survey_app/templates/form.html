@@ -11,38 +11,42 @@
     </head>
     <body>
         <div class="container">
-            <Form action="/results" method="post">
-                {% csrf_token %}
-                <div class="form-group form-inline">
-                    <label for="name" class="col-md-2 offset-1" style="text-align: left;">Your Name:</label>
-                    <input type="text" class="form-control col-md-6" id="yourName" name="name">
+            <div class="card w-75">
+                <div class="card-body">
+                    <Form action="/results" method="post">
+                        {% csrf_token %}
+                        <div class="form-group form-inline">
+                            <label for="name">Your Name:</label>
+                            <input type="text" class="form-control col-9 offset-1" name="name">
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="location">Dojo Location:</label>
+                            <select name="location" class="form-control col-9 offset-1" id="dojoLocation">
+                                <option value="San Jose">San Jose</option>
+                                <option value="Kent">Kent</option>
+                                <option value="Seattle">Seattle</option>
+                                <option value="Dallas">Dallas</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="language">Favorite Language:</label>
+                            <select name="language" class="form-control col-9 ml-5" id="favoriteLanguage">
+                                <option value="python">Python</option>
+                                <option value="Kent">Ruby</option>
+                                <option value="Seattle">Java</option>
+                                <option value="Dallas">PHP</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Comment(optional):</label>
+                            <textarea class="form-control" id="userResponse" name="comment"></textarea>
+                        </div>
+                        <div class="form-group mb-3">
+                            <button type="submit" class="btn btn-primary" value="submit" style="float: right;">Button</button>
+                        </div>    
+                    </Form>
                 </div>
-                <div class="form-group form-inline">
-                    <label for="location" class="col-md-2 offset-1">Dojo Location:</label>
-                    <select name="location" class="form-control col-md-6" id="dojoLocation">
-                        <option value="San Jose">San Jose</option>
-                        <option value="Kent">Kent</option>
-                        <option value="Seattle">Seattle</option>
-                        <option value="Dallas">Dallas</option>
-                    </select>
-                </div>
-                <div class="form-group form-inline">
-                    <label for="language" class="col-md-2 offset-1" style="text-align: left;">Favorite Language:</label>
-                    <select name="language" class="form-control col-md-6" id="favoriteLanguage">
-                        <option value="python">Python</option>
-                        <option value="Kent">Ruby</option>
-                        <option value="Seattle">Java</option>
-                        <option value="Dallas">PHP</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="comment" class="col-md-2 offset-1">Comment(optional):</label>
-                    <textarea class="form-control col-md-8 offset-1" id="userResponse" name="comment"></textarea>
-                </div>
-                <div class=" form-group col-md-8 offset-1 mb-3">
-                    <button type="submit" class="btn btn-primary" value="submit" style="float: right;">Button</button>
-                </div>    
-            </Form>
+            </div>
         </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
